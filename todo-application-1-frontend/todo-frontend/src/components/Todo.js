@@ -12,13 +12,15 @@ const Todo = ({ todo, onEdit, onDelete }) => {
                         <p className="card-text">{todo.description}</p>
                     </div>
                 </div>
-                <div className='col-2 todo-button-group'>
-                    <button className="btn btn-primary btn-sm ms-2" onClick={() => onEdit(todo.id)}>
-                        <Pencil/>
-                    </button>
-                    <button className="btn btn-danger btn-sm ms-2" onClick={() => onDelete(todo.id)}>
-                        <Trash/>
-                    </button>
+                <div className='col-4 todo-button-group mt-3'>
+                    <div className='row'>
+                        <button className="btn btn-primary btn-sm ms-2" onClick={() => onEdit(todo.id)}>
+                            <Pencil/>
+                        </button>
+                        <button className="btn btn-danger btn-sm ms-2" onClick={() => onDelete(todo.id)}>
+                            <Trash/>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
