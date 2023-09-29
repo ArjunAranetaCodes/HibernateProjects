@@ -12,7 +12,7 @@ const Todo = ({ todo, onEdit, onDelete }) => {
                         <p className="card-text">{todo.description}</p>
                     </div>
                 </div>
-                <div className='col-2'>
+                <div className='col-2 todo-button-group'>
                     <button className="btn btn-primary btn-sm ms-2" onClick={() => onEdit(todo.id)}>
                         <Pencil/>
                     </button>
