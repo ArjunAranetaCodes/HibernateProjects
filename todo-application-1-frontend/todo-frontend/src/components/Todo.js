@@ -1,6 +1,6 @@
 // Todo.js
 import React from 'react';
-import { Trash } from 'react-bootstrap-icons';
+import { Trash, Pencil } from 'react-bootstrap-icons';
 
 const Todo = ({ todo, onEdit, onDelete }) => {
     return (
@@ -14,10 +14,10 @@ const Todo = ({ todo, onEdit, onDelete }) => {
                 </div>
                 <div className='col-2'>
                     <button className="btn btn-primary btn-sm ms-2" onClick={() => onEdit(todo.id)}>
-                        <i className="icon-edit"></i>Edit
+                        <Pencil/>
                     </button>
                     <button className="btn btn-danger btn-sm ms-2" onClick={() => onDelete(todo.id)}>
-                        <Trash/>Delete
+                        <Trash/>
                     </button>
                 </div>
             </div>
