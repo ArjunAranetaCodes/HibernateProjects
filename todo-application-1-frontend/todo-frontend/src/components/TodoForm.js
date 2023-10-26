@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const TodoForm = () => {
+const TodoForm = ({todos, setTodos}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -11,7 +11,11 @@ const TodoForm = () => {
     axios.post('http://localhost:8080/api/todos', { title, description }) // Replace with your backend endpoint
       .then(response => {
         console.log('Todo added successfully:', response.data);
-        // Add logic to update state or fetch todos again
+
+        fetch('http://localhost:8080/api/todos')
+            .then((response) => response.json())
+            .then((updatedTodos) => setTodos(updatedTodos))
+            .catch((error) => console.error('Error fetching updated todos:', error));
       })
       .catch(error => console.error('Error adding todo:', error));
   };
@@ -29,7 +33,7 @@ const TodoForm = () => {
                 <label htmlFor="description" className="form-label">Description</label>
                 <input type="text" className="form-control"  value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
-            <button type="submit" className="btn btn-success">Add Todo</button>
+            <button type="submit" className="btn btn-success" >Add Todo</button>
           </form>
         </div>
       </div>
