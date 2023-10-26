@@ -11,7 +11,6 @@ const TodoList = ({todos, setTodos}) => {
   }, []);
 
   const handleDelete = (id) => {
-    // Send delete request to the API
     fetch(`http://localhost:8080/api/todos/${id}`, {
         method: 'DELETE',
     })
