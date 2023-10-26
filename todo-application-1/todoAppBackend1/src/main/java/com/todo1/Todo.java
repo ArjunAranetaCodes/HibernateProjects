@@ -14,6 +14,7 @@ public class Todo {
     private String title;
     private String description;
     private boolean completed;
+    private boolean deleted = false;
 
     public void setId(Long id) {
     }
@@ -45,7 +46,14 @@ public class Todo {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-    // Getters and setters
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 }
 
 
