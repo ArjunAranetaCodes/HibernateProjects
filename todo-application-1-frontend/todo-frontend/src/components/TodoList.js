@@ -15,9 +15,16 @@ const TodoList = ({todos, setTodos}) => {
     fetch(`http://localhost:8080/api/todos/${id}`, {
         method: 'DELETE',
     })
-        .then((response) => response.json())
+        .then((response) =>
+        {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();
+        })
         .then((data) => {
-            console.log(data);
+          console.log(data);
+          setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));   
         })
         .catch((error) => console.error('Error deleting todo:', error));
   };
