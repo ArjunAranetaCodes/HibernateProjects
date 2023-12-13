@@ -2,14 +2,14 @@
 
 # dependencies
 /todo-frontend/node_modules
-/todo-frontend//.pnp
+/todo-frontend/.pnp
 /todo-frontend/.pnp.js
 
 # testing
-/todo-frontend//coverage
+/todo-frontend/coverage
 
 # production
-/todo-frontend//build
+/todo-frontend/build
 
 # misc
 /todo-frontend/.DS_Store
