@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/todo-frontend/node_modules
+/todo-frontend//.pnp
+/todo-frontend/.pnp.js
+
+# testing
+/todo-frontend//coverage
+
+# production
+/todo-frontend//build
+
+# misc
+/todo-frontend/.DS_Store
+/todo-frontend/.env.local
+/todo-frontend/.env.development.local
+/todo-frontend/.env.test.local
+/todo-frontend/.env.production.local
+
+/todo-frontend/npm-debug.log*
+/todo-frontend/yarn-debug.log*
+/todo-frontend/yarn-error.log*
