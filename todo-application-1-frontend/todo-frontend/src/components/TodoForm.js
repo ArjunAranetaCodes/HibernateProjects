@@ -23,13 +23,13 @@ const TodoForm = () => {
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="name" className="form-label">Todo Title</label>
-                <input type="text" class="form-control"  value={title} onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" className="form-control"  value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div className="mb-3">
                 <label htmlFor="description" className="form-label">Description</label>
-                <input type="text" class="form-control"  value={description} onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" className="form-control"  value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
-            <button type="submit" class="btn btn-success">Add Todo</button>
+            <button type="submit" className="btn btn-success">Add Todo</button>
           </form>
         </div>
       </div>
