@@ -17,18 +17,24 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Todo Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      </label>
-      <br/>
-      <label>
-        Description:
-        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-      </label>
-      <button type="submit">Add Todo</button>
-    </form>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+                <label htmlFor="name" className="form-label">Todo Title</label>
+                <input type="text" class="form-control"  value={title} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="description" className="form-label">Description</label>
+                <input type="text" class="form-control"  value={description} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <button type="submit" class="btn btn-success">Add Todo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
   );
 };
 
