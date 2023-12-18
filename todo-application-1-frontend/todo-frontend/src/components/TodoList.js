@@ -11,13 +11,16 @@ const TodoList = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Todo List</h2>
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <ul class="list-group">
+            {todos.map(todo => (
+              <li class="list-group-item" key={todo.id}>{todo.title}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
