@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const TodoForm = ({todos, setTodos}) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
