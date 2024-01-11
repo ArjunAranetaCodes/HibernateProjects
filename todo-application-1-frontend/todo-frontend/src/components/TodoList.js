@@ -27,6 +27,25 @@ const TodoList = ({todos, setTodos}) => {
         })
         .catch((error) => console.error('Error deleting todo:', error));
   };
+  
+  const handleEdit = (id) => {
+    console.log(id)
+    fetch(`http://localhost:8080/api/todos/${id}`, {
+        method: 'GET',
+    })
+        .then((response) =>
+        {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();
+        })
+        .then((data) => {
+          console.log(data);
+          setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));   
+        })
+        .catch((error) => console.error('Error deleting todo:', error));
+  }
 
   return (
     <div className="container mt-5">
@@ -34,7 +53,9 @@ const TodoList = ({todos, setTodos}) => {
         <div className="col-md-6">
           <ul className="list-group">
             {todos.map(todo => (
-              <Todo key={todo.id} todo={todo} onDelete={handleDelete} />
+              <Todo key={todo.id} todo={todo} 
+                onDelete={handleDelete} 
+                onEdit={handleEdit}/>
             ))}
           </ul>
         </div>
