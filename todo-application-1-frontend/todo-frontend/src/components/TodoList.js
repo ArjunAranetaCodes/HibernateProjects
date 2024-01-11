@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Todo from './Todo';
 
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos, setTodos, title, setTitle, description, setDescription}) => {
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/todos') // Replace with your backend endpoint
@@ -42,8 +42,11 @@ const TodoList = ({todos, setTodos}) => {
         })
         .then((data) => {
           console.log(data);
+          var parsedData = JSON.parse(data);
+          setTitle(parsedData.title);
+          setDescription(parsedData.description);
         })
-        .catch((error) => console.error('Error deleting todo:', error));
+        .catch((error) => console.error('Error editing todo:', error));
   }
 
   return (
