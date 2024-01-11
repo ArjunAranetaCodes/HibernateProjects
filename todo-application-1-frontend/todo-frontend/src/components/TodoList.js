@@ -42,7 +42,6 @@ const TodoList = ({todos, setTodos}) => {
         })
         .then((data) => {
           console.log(data);
-          setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));   
         })
         .catch((error) => console.error('Error deleting todo:', error));
   }
