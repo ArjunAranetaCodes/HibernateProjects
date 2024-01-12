@@ -22,7 +22,7 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
   const handleAddOrUpdateTodo = (e) => {
     e.preventDefault();
     if (editMode) {
-        console.log('newTodo ' + title)
+        console.log('editTodoId ' + editTodoId)
         // Update existing todo
         fetch(`http://localhost:8080/api/todos/${editTodoId}`, {
             method: 'PUT',
@@ -31,6 +31,7 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
             },
             body: JSON.stringify({
                 title: title,
+                description: description,
                 // Add any other properties you have for a todo
             }),
         })

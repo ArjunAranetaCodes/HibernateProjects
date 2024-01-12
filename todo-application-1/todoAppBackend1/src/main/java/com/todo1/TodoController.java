@@ -31,7 +31,10 @@ public class TodoController {
     @PutMapping("/{id}")
     public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
         todo.setId(id);
-        return todoService.saveOrUpdate(todo);
+        Todo existingTodo = todoService.getTodoById(id);
+        existingTodo.setTitle(todo.getTitle());
+        existingTodo.setDescription(todo.getDescription());
+        return todoService.saveOrUpdate(existingTodo);
     }
 
     @DeleteMapping("/{id}")
