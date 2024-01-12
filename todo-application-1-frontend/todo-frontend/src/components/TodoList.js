@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Todo from './Todo';
 
-const TodoList = ({todos, setTodos, title, setTitle, description, setDescription}) => {
+const TodoList = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode}) => {
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/todos') // Replace with your backend endpoint
@@ -44,6 +44,7 @@ const TodoList = ({todos, setTodos, title, setTitle, description, setDescription
           var parsedData = JSON.parse(data);
           setTitle(parsedData.title);
           setDescription(parsedData.description);
+          setEditMode(true);
         })
         .catch((error) => console.error('Error editing todo:', error));
   }
