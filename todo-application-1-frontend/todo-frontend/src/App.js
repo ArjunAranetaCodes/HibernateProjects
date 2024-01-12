@@ -7,16 +7,19 @@ function App() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [editMode, setEditMode] = useState(false);
+  const [editTodoId, setEditTodoId] = useState(null);
   return (
     <div>
       <TodoForm todos={todos} setTodos={setTodos}
         title={title} setTitle={setTitle}
         description={description} setDescription={setDescription}
-        editMode={editMode} setEditMode={setEditMode}/>
+        editMode={editMode} setEditMode={setEditMode}
+        editTodoId={editTodoId} setEditTodoId={setEditTodoId}/>
       <TodoList todos={todos} setTodos={setTodos}
         title={title} setTitle={setTitle}
         description={description} setDescription={setDescription}
-        editMode={editMode} setEditMode={setEditMode}/>
+        editMode={editMode} setEditMode={setEditMode}
+        editTodoId={editTodoId} setEditTodoId={setEditTodoId}/>
     </div>
   );
 }

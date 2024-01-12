@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode}) => {
+const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode, editTodoId, setEditTodoId}) => {
   const [newTodo, setNewTodo] = useState('');
-  const [editTodoId, setEditTodoId] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +21,7 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
 
   const handleAddOrUpdateTodo = () => {
     if (editMode) {
+        console.log('newTodo ' + title)
         // Update existing todo
         fetch(`http://localhost:8080/api/todos/${editTodoId}`, {
             method: 'PUT',
@@ -29,7 +29,7 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                title: newTodo,
+                title: title,
                 // Add any other properties you have for a todo
             }),
         })

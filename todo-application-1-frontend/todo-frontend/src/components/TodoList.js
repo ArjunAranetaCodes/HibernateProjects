@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Todo from './Todo';
 
-const TodoList = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode}) => {
+const TodoList = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode, setEditTodoId}) => {
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/todos') // Replace with your backend endpoint
@@ -30,6 +30,7 @@ const TodoList = ({todos, setTodos, title, setTitle, description, setDescription
   
   const handleEdit = (id) => {
     console.log(id)
+    setEditTodoId(id)
     fetch(`http://localhost:8080/api/todos/${id}`, {
         method: 'GET',
     })
