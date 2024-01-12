@@ -32,6 +32,7 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
                 <input type="text" className="form-control"  value={description  || ''} onChange={(e) => setDescription(e.target.value)} />
             </div>
             <button type="submit" className="btn btn-success" >Add Todo</button>
+            <button type="submit" className="btn btn-primary" >Update Todo</button>
           </form>
         </div>
       </div>

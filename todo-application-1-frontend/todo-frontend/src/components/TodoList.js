@@ -41,7 +41,6 @@ const TodoList = ({todos, setTodos, title, setTitle, description, setDescription
         return response.text();
         })
         .then((data) => {
-          console.log(data);
           var parsedData = JSON.parse(data);
           setTitle(parsedData.title);
           setDescription(parsedData.description);
