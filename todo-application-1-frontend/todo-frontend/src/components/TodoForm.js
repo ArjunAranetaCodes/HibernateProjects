@@ -4,21 +4,6 @@ import axios from 'axios';
 const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription, editMode, setEditMode, editTodoId, setEditTodoId}) => {
   const [newTodo, setNewTodo] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    axios.post('http://localhost:8080/api/todos', { title, description }) // Replace with your backend endpoint
-      .then(response => {
-        console.log('Todo added successfully:', response.data);
-
-        fetch('http://localhost:8080/api/todos')
-            .then((response) => response.json())
-            .then((updatedTodos) => setTodos(updatedTodos))
-            .catch((error) => console.error('Error fetching updated todos:', error));
-      })
-      .catch(error => console.error('Error adding todo:', error));
-  };
-
   const handleAddOrUpdateTodo = (e) => {
     e.preventDefault();
     if (editMode) {
