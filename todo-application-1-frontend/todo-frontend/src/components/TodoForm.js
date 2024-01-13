@@ -77,11 +77,11 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
                     onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div className="row mb-3">
-                <label htmlFor="description" className="form-label">Description</label>
                 <input type="text" 
                     className="form-control"  
                     placeholder='Description'
-                    value={description  || ''} onChange={(e) => setDescription(e.target.value)} />
+                    value={description  || ''} 
+                    onChange={(e) => setDescription(e.target.value)} />
             </div>
             <div className='row mb-3'>
                 <button className="btn btn-success" >
