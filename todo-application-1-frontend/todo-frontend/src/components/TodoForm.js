@@ -69,17 +69,25 @@ const TodoForm = ({todos, setTodos, title, setTitle, description, setDescription
       <div className="row justify-content-center">
         <div className="col-md-6">
           <form onSubmit={handleAddOrUpdateTodo}>
-            <div className="mb-3">
-                <label htmlFor="name" className="form-label">Todo Title</label>
-                <input type="text" className="form-control"  value={title  || ''} onChange={(e) => setTitle(e.target.value)} />
+            <div className="row mb-3">
+                <input type="text" 
+                    className="form-control"
+                    placeholder='Todo Title'  
+                    value={title  || ''} 
+                    onChange={(e) => setTitle(e.target.value)} />
             </div>
-            <div className="mb-3">
+            <div className="row mb-3">
                 <label htmlFor="description" className="form-label">Description</label>
-                <input type="text" className="form-control"  value={description  || ''} onChange={(e) => setDescription(e.target.value)} />
+                <input type="text" 
+                    className="form-control"  
+                    placeholder='Description'
+                    value={description  || ''} onChange={(e) => setDescription(e.target.value)} />
             </div>
-                <button className="btn btn-success ms-2" >
+            <div className='row mb-3'>
+                <button className="btn btn-success" >
                     {editMode ? 'Update Todo' : 'Add Todo'}
                 </button>
+            </div>
           </form>
         </div>
       </div>
